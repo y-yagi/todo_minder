@@ -1,0 +1,10 @@
+{
+  "name": "todo_minder",
+  "dependencies": {
+    "bootstrap": "*"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}
