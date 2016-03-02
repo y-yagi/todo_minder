@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-
 gem 'jquery-rails'
+gem 'pg', '~> 0.18'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'puma', '~> 3.0'
+gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5.x'
+gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
