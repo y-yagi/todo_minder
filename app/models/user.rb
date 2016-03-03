@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :lists
+
   class << self
     def find_or_create_from_auth_hash(auth)
       find_by(provider: auth['provider'], uid: auth['uid']) ||
