@@ -7,6 +7,7 @@ html
     title
       | TodoMinder
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'realod'
+    link[rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"]
     = javascript_include_tag 'application', 'data-turbolinks-track': 'realod'
     = csrf_meta_tags
 
@@ -25,7 +26,4 @@ html
               a href="../help/" Help
 
     .container
-      .page-header id="banner"
-        .row
-          .col-lg-8.col-md-7.col-sm-6
-            = yield
+      = yield

@@ -1,50 +1,25 @@
-.container
-  .row
-    .col-sm-5.bootcards-list
+h2
+  | やることリスト
+.row
+  - @lists.each do |list|
+    .col-sm-3.bootcards-list
       .panel.panel-default
         .panel-heading.clearfix
           h3.panel-title.pull-left
-            | Base Card Title
-          a.btn.btn-primary.pull-right
+            strong
+              = list.name
+          a.btn.btn-primary.btn-xs.pull-right
             i.fa.fa-pencil
-              | Edit
+            | Add
         .list-group
-          .list-group-item
-            p.list-group-item-text
-              | Name
-            h4.list-group-item-heading
-              | JohnSmith
-          .list-group-item
-            p.list-group-item-text
-              | Long Text
+          - list.tasks do |task|
+            .list-group-item
+              p.list-group-item-text
+                = task.detail
+              h4.list-group-item-heading
+                = task.deadline_at
         .panel-footer
           small
-            | Built with Bootcards - Base Card
+            | Nothing!!!
 
-  table
-    thead
-      tr
-        th Detail
-        th List
-        th User
-        th Deadline at
-        th Weighting
-        th
-        th
-        th
-
-    tbody
-      - @tasks.each do |task|
-        tr
-          td = task.detail
-          td = task.list
-          td = task.user
-          td = task.deadline_at
-          td = task.point
-          td = link_to 'Show', task
-          td = link_to 'Edit', edit_task_path(task)
-          td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-  br
-
-  = link_to 'New Task', new_task_path
+= link_to 'New Task', new_task_path

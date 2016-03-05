@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    @lists = current_user.lists.includes(:tasks)
+    @tasks = current_user.tasks
   end
 
   # GET /tasks/1

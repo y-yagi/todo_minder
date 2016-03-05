@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :lists
+  has_many :tasks
 
   class << self
     def find_or_create_from_auth_hash(auth)
