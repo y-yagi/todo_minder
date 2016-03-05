@@ -1,7 +1,8 @@
 {
   "name": "todo_minder",
   "dependencies": {
-    "bootstrap": "*"
+    "bootstrap": "*" ,
+    "bootcards": "*"
   },
   "license": "MIT",
   "engines": {
