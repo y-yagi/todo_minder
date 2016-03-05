@@ -5,11 +5,11 @@ one:
   list: one
   user: one
   deadline_at: 2016-03-05 13:27:12
-  weighting: 1
+  point: 1
 
 two:
   detail: MyString
   list: two
   user: two
   deadline_at: 2016-03-05 13:27:12
-  weighting: 1
+  point: 1

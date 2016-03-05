@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160305042712) do
     t.integer  "list_id"
     t.integer  "user_id"
     t.datetime "deadline_at"
-    t.integer  "weighting"
+    t.integer  "point"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -19,7 +19,7 @@ table
         td = task.list
         td = task.user
         td = task.deadline_at
-        td = task.weighting
+        td = task.point
         td = link_to 'Show', task
         td = link_to 'Edit', edit_task_path(task)
         td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete

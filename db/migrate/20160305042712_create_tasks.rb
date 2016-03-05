@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.references :list, foreign_key: true
       t.references :user, foreign_key: true
       t.datetime :deadline_at
-      t.integer :weighting
+      t.integer :point
 
       t.timestamps
     end
