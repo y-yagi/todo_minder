@@ -10,15 +10,10 @@
     = f.label :detail
     = f.text_field :detail
   .field
-    = f.label :list
-    = f.text_field :list
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
     = f.label :deadline_at
     = f.datetime_select :deadline_at
   .field
     = f.label :weighting
     = f.number_field :weighting
+  = f.hidden_field :list_id, value: 1
   .actions = f.submit
