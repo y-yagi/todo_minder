@@ -13,6 +13,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    @list = current_user.lists.find(params[:list_id])
     @task = Task.new
   end
 
@@ -25,7 +26,7 @@ class TasksController < ApplicationController
     @task = Task.build(task_params, current_user)
 
     if @task.save
-      redirect_to @task, notice: 'Task was successfully created.'
+      redirect_to tasks_path, notice: 'Task was successfully created.'
     else
       render :new
     end
