@@ -8,12 +8,14 @@ class User < ApplicationRecord
     end
 
     def create_with_omniauth!(auth)
-      create! do |u|
+      user = create! do |u|
         u.provider = auth['provider']
         u.uid = auth['uid']
         u.email = auth['info']['email'].presence || ''
         u.name = acquire_name_from_auth_hash(auth)
       end
+      List.generate_default_lists!(user)
+      user
     end
 
     def acquire_name_from_auth_hash(auth)
