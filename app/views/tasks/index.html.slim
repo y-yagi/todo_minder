@@ -1,0 +1,29 @@
+h1 Listing tasks
+
+table
+  thead
+    tr
+      th Detail
+      th List
+      th User
+      th Deadline at
+      th Weighting
+      th
+      th
+      th
+
+  tbody
+    - @tasks.each do |task|
+      tr
+        td = task.detail
+        td = task.list
+        td = task.user
+        td = task.deadline_at
+        td = task.weighting
+        td = link_to 'Show', task
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Task', new_task_path

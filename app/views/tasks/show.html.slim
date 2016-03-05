@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Detail:
+  = @task.detail
+p
+  strong List:
+  = @task.list
+p
+  strong User:
+  = @task.user
+p
+  strong Deadline at:
+  = @task.deadline_at
+p
+  strong Weighting:
+  = @task.weighting
+
+= link_to 'Edit', edit_task_path(@task)
+'|
+= link_to 'Back', tasks_path
