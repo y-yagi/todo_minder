@@ -1,29 +1,50 @@
-h1 Listing tasks
+.container
+  .row
+    .col-sm-5.bootcards-list
+      .panel.panel-default
+        .panel-heading.clearfix
+          h3.panel-title.pull-left
+            | Base Card Title
+          a.btn.btn-primary.pull-right
+            i.fa.fa-pencil
+              | Edit
+        .list-group
+          .list-group-item
+            p.list-group-item-text
+              | Name
+            h4.list-group-item-heading
+              | JohnSmith
+          .list-group-item
+            p.list-group-item-text
+              | Long Text
+        .panel-footer
+          small
+            | Built with Bootcards - Base Card
 
-table
-  thead
-    tr
-      th Detail
-      th List
-      th User
-      th Deadline at
-      th Weighting
-      th
-      th
-      th
-
-  tbody
-    - @tasks.each do |task|
+  table
+    thead
       tr
-        td = task.detail
-        td = task.list
-        td = task.user
-        td = task.deadline_at
-        td = task.point
-        td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th Detail
+        th List
+        th User
+        th Deadline at
+        th Weighting
+        th
+        th
+        th
 
-br
+    tbody
+      - @tasks.each do |task|
+        tr
+          td = task.detail
+          td = task.list
+          td = task.user
+          td = task.deadline_at
+          td = task.point
+          td = link_to 'Show', task
+          td = link_to 'Edit', edit_task_path(task)
+          td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-= link_to 'New Task', new_task_path
+  br
+
+  = link_to 'New Task', new_task_path

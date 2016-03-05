@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.min
+//= require bootcards/dist/js/bootcards.min
 //= require_tree .
