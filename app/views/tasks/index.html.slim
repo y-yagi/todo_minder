@@ -8,9 +8,6 @@ h2
           h3.panel-title.pull-left
             strong
               = list.name
-          = link_to(new_task_path(list_id: list.id), class: 'btn btn-primary btn-xs pull-right') do
-            i.fa.fa-pencil
-            | 追加
         .list-group
           - list.tasks.each do |task|
             .list-group-item
@@ -18,7 +15,7 @@ h2
                 = l(task.deadline_at)
               h4.list-group-item-heading
                 = task.detail
-        - if list.tasks.empty?
-          .panel-footer
-            small
-              | ここのやることは無いよ! お疲れ様!!
+        .panel-footer.text-center
+          = link_to(new_task_path(list_id: list.id), class: 'btn btn-primary btn-xs text-center') do
+            i.fa.fa-plus
+            | 追加
