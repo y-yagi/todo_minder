@@ -15,5 +15,5 @@
   .field
     = f.label :point
     = f.number_field :point
-  = f.hidden_field :list_id, value: @list.id
+  = f.hidden_field :list_id, value: @list.try(:id)
   .actions = f.submit

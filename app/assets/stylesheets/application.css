@@ -12,6 +12,8 @@
  *
  *= require bootcards/dist/css/bootcards-desktop.min
  *= require bootstrap.min
+ *= require remodal/dist/remodal
+ *= require remodal/dist/remodal-default-theme
  *= require_tree .
  *= require_self
  */

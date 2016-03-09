@@ -1,21 +1,26 @@
-h2
-  | やることリスト
-.row
-  - @lists.each do |list|
-    .col-sm-4.bootcards-list
-      .panel.panel-default
-        .panel-heading.clearfix
-          h3.panel-title.pull-left
-            strong
-              = list.name
-        .list-group
-          - list.tasks.each do |task|
-            .list-group-item
-              p.list-group-item-text
-                = l(task.deadline_at)
-              h4.list-group-item-heading
-                = task.detail
-        .panel-footer.text-center
-          = link_to(new_task_path(list_id: list.id), class: 'btn btn-primary btn-xs text-center') do
-            i.fa.fa-plus
-            | 追加
+.remodal-bg
+  h2
+    | やることリスト
+  .row
+    - @lists.each do |list|
+      .col-sm-4.bootcards-list
+        .panel.panel-default
+          .panel-heading.clearfix
+            h3.panel-title.pull-left
+              strong
+                = list.name
+          .list-group
+            - list.tasks.each do |task|
+              .list-group-item
+                p.list-group-item-text
+                  = l(task.deadline_at)
+                h4.list-group-item-heading
+                  = task.detail
+          .panel-footer.text-center
+            a data-remodal-target="add-modal" class='btn btn-primary btn-xs text-center'
+              i.fa.fa-plus
+              | 追加
+
+.remodal data-remodal-id="add-modal"
+  button data-remodal-action="close" class="remodal-close"
+  == render 'form'
