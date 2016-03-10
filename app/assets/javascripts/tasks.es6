@@ -3,4 +3,5 @@ $(document).ready(function(){
     var list_id = e.target.id;
     $('#task_list_id').val(list_id);
   });
+  $('#datetimepicker').datetimepicker({locale: 'ja'});
 });

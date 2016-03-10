@@ -3,4 +3,6 @@ ja:
     attributes:
       task:
         detail: やること
+        deadline_at: 締め切り
+        point: ポイント
 

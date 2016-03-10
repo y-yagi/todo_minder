@@ -1,4 +1,4 @@
-= form_for @task do |f|
+= form_for @task, html: { class: 'form-horizontal' } do |f|
   - if @task.errors.any?
     #error_explanation
       h2 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
@@ -6,14 +6,22 @@
         - @task.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :detail
-    = f.text_field :detail
-  .field
-    = f.label :deadline_at
-    = f.datetime_select :deadline_at
-  .field
-    = f.label :point
-    = f.number_field :point
-  = f.hidden_field :list_id, value: @list.try(:id)
-  .actions = f.submit
+  fieldset
+    .form-group
+      = f.label :detail, class: 'col-lg-2 control-label'
+      .col-lg-10
+        = f.text_field :detail, class: 'form-control'
+    .form-group
+      = f.label :deadline_at, class: 'col-lg-2 control-label'
+      .col-lg-10
+        .input-group.date id='datetimepicker'
+          = f.text_field :deadline_at, class: 'form-control'
+          span.input-group-addon
+            span.glyphicon.glyphicon-calendar
+    .form-group
+      = f.label :point, class: 'col-lg-2 control-label'
+      .col-lg-10
+        = f.select :point, options_for_select((1..9).to_a), { include_blank: true }, { class: 'form-control' }
+    .form-group
+      = f.submit class: 'btn btn-primary'
+      = f.hidden_field :list_id, value: @list.try(:id)
