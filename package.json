@@ -3,7 +3,8 @@
   "dependencies": {
     "bootstrap": "*" ,
     "bootcards": "*" ,
-    "remodal": "*"
+    "remodal": "*",
+    "eonasdan-bootstrap-datetimepicker": "*"
   },
   "license": "MIT",
   "engines": {
