@@ -10,7 +10,7 @@
               strong
                 = list.name
           .list-group
-            - list.tasks.each do |task|
+            - list.tasks.active.each do |task|
               .list-group-item
                 p.list-group-item-text
                   = l(task.deadline_at)

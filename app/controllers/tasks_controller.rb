@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @lists = current_user.lists.includes(:tasks)
-    @tasks = current_user.tasks
     @task = Task.new
   end
 
