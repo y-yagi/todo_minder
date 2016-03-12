@@ -20,7 +20,7 @@
                   span.badge
                     = task.point
                 h4.list-group-item-heading
-                  = task.detail
+                  = link_to task.detail, edit_task_path(task), { remote: true }
                   span.pull-right
                     = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete } do
                       i.fa.fa-trash-o
@@ -31,3 +31,4 @@
   .col-lg-12
     .well.bs-component
       == render 'form'
+.edit-modal
