@@ -9,6 +9,9 @@
             h3.panel-title.pull-left
               strong
                 = list.name
+            a data-remodal-target="add-modal" class='btn btn-primary btn-xs pull-right add-task' id="#{list.id}"
+              i.fa.fa-plus
+              | 追加
           .list-group
             - list.tasks.active.each do |task|
               .list-group-item
@@ -17,9 +20,6 @@
                 h4.list-group-item-heading
                   = task.detail
           .panel-footer.text-center
-            a data-remodal-target="add-modal" class='btn btn-primary btn-xs text-center add-task' id="#{list.id}"
-              i.fa.fa-plus
-              | 追加
 
 .remodal data-remodal-id="add-modal"
   button data-remodal-action="close" class="remodal-close"
