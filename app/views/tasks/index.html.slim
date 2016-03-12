@@ -16,9 +16,11 @@
             - list.tasks.active.each do |task|
               .list-group-item
                 p.list-group-item-text
-                  = l(task.deadline_at) if task.deadline_at
-                  span.badge
-                    = task.point
+                  - if task.point
+                    strong.text-success
+                      = "#{task.point}pt"
+                  span.pull-right
+                    = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
                   = link_to task.detail, edit_task_path(task), { remote: true }
                   span.pull-right
