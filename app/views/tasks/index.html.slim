@@ -7,7 +7,8 @@
         .panel.panel-default
           .panel-heading.clearfix
             h3.panel-title.pull-left
-              = list.name
+              strong
+                = list.name
             a data-remodal-target="add-modal" class='btn btn-primary btn-xs pull-right add-task' id="#{list.id}"
               i.fa.fa-plus
               | 追加
@@ -16,8 +17,13 @@
               .list-group-item
                 p.list-group-item-text
                   = l(task.deadline_at) if task.deadline_at
+                  span.badge
+                    = task.point
                 h4.list-group-item-heading
                   = task.detail
+                  span.pull-right
+                    = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete } do
+                      i.fa.fa-trash-o
           .panel-footer.text-center
 
 .remodal data-remodal-id="add-modal"
