@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_lists, only: [:index, :create, :edit, :update, :destroy]
 
   # GET /tasks
   def index
-    @lists = current_user.lists.includes(:tasks)
     @task = Task.new
   end
 
@@ -48,12 +48,14 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    def set_lists
+      @lists = current_user.lists.includes(:tasks)
+    end
+
     def task_params
       params.require(:task).permit(:detail, :list_id, :deadline_at, :point)
     end

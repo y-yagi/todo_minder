@@ -12,6 +12,10 @@
       .col-lg-10
         = f.text_field :detail, class: 'form-control'
     .form-group
+      = f.label :list_id, class: 'col-lg-2 control-label'
+      .col-lg-10
+        = f.select :list_id, options_for_select(@lists.map { |list| [list.name, list.id] }), { default: @list.try(:id) }, { class: 'form-control' }
+    .form-group
       = f.label :deadline_at, class: 'col-lg-2 control-label'
       .col-lg-10
         .input-group.date id='datetimepicker'
@@ -24,4 +28,3 @@
         = f.select :point, options_for_select((1..9).to_a), { include_blank: true }, { class: 'form-control' }
     .form-group
       = f.submit class: 'btn btn-primary'
-      = f.hidden_field :list_id, value: @list.try(:id)
