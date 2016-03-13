@@ -25,6 +25,6 @@
     .form-group
       = f.label :point, class: 'col-lg-2 control-label'
       .col-lg-10
-        = f.select :point, options_for_select((1..9).to_a), { include_blank: true }, { class: 'form-control' }
+        = f.select :point, options_for_select((1..9).to_a, selected: @task.point), { include_blank: true }, { class: 'form-control' }
     .form-group
       = f.submit class: 'btn btn-primary'
