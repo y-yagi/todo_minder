@@ -22,8 +22,9 @@ html
             #icon-bar
         .navbar-collapse-collapse id="navbar-main"
           ul.nav.navbar-nav
-            li
-              = link_to 'logout', logout_path
+            - if logged_in?
+              li
+                = link_to 'logout', logout_path
 
     .container
       = yield
