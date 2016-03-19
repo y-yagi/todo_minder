@@ -13,7 +13,7 @@
               i.fa.fa-plus
               | 追加
           .list-group
-            - list.tasks.active.each do |task|
+            - list.tasks.each do |task|
               .list-group-item
                 p.list-group-item-text
                   - if task.point

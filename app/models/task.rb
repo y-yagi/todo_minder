@@ -4,8 +4,6 @@ class Task < ApplicationRecord
 
   validates :detail, presence: true
 
-  scope :active, -> { where(finished: false) }
-
   class << self
     def build(params, current_user)
       task = Task.new(params)

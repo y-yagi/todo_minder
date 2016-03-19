@@ -26,14 +26,13 @@ ActiveRecord::Schema.define(version: 20160305042712) do
   add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "detail",                      null: false
+    t.string   "detail",      null: false
     t.integer  "list_id"
     t.integer  "user_id"
     t.datetime "deadline_at"
     t.integer  "point"
-    t.boolean  "finished",    default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id", using: :btree
