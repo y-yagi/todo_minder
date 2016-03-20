@@ -4,6 +4,10 @@ class Task < ApplicationRecord
 
   validates :detail, presence: true
 
+  scope :deadline_is_close, -> (user, range_end = 1.hour.since) do
+    where(deadline_at: [Time.current..range_end])
+  end
+
   class << self
     def build(params, current_user)
       task = Task.new(params)
