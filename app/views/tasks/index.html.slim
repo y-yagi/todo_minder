@@ -23,9 +23,8 @@
                     = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
                   = link_to task.detail, edit_task_path(task), { remote: true }
-                  span.pull-right
-                    = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete } do
-                      i.fa.fa-trash-o
+                  = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete } do
+                    i.fa.fa-trash-o
           .panel-footer.text-center
 
 .remodal data-remodal-id="add-modal"
