@@ -80,6 +80,5 @@ test:
 #
 production:
   <<: *default
-  database: todo_minder_production
-  username: todo_minder
-  password: <%= ENV['TODO_MINDER_DATABASE_PASSWORD'] %>
+  database: todo_minder
+  url: <%= ENV['DATABASE_URL'] %>
