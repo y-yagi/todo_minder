@@ -25,6 +25,8 @@ html
             - if logged_in?
               li
                 = link_to 'logout', logout_path
+              li
+                = link_to 'lists', lists_path
 
     .container
       = yield
