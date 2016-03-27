@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :lists
-  has_many :tasks
+  has_many :lists, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   class << self
     def find_or_create_from_auth_hash(auth)
