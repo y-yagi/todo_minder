@@ -20,5 +20,6 @@ module TodoMinder
 
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+    config.app = config_for(:app)
   end
 end

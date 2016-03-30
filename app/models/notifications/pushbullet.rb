@@ -9,7 +9,7 @@ module Notifications
         devices = ::Pushbullet::Device.all
 
         Task.deadline_is_close(user).each do |task|
-          devices.first.push_note(TASK_TITLE, task.detail)
+          devices.first.push_link(TASK_TITLE, Rails.configuration.app["host"], task.detail)
         end
       end
     end
