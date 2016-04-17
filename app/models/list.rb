@@ -1,6 +1,6 @@
 class List < ApplicationRecord
   belongs_to :user
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, -> { order(deadline_at: :asc, created_at: :asc) }, dependent: :destroy
 
   validates :name, presence: true
 
