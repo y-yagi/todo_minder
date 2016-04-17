@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :check_logged_in
-  force_ssl if: :ssl_configured?
 
   helper_method :current_user, :logged_in?
 
@@ -18,9 +17,5 @@ class ApplicationController < ActionController::Base
 
   def check_logged_in
     redirect_to login_path unless logged_in?
-  end
-
-  def ssl_configured?
-    Rails.env.production?
   end
 end
