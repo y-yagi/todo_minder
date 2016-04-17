@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/MiniProfiler/rack-mini-profiler.git
+  revision: f580d609677c0792b9685d555ffa7c1378c15787
+  specs:
+    rack-mini-profiler (0.9.9.2)
+      rack (>= 1.2.0)
+
+GIT
   remote: git://github.com/rails/rails.git
   revision: fbe6e4e306b6f73fe29e33004956e5862fd7bd86
   specs:
@@ -244,6 +251,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 3.0)
+  rack-mini-profiler!
   rails!
   rails_12factor
   ruby-pushbullet
