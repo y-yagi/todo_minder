@@ -23,6 +23,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'flamegraph'
   gem 'web-console', '~> 3.0'
   gem 'listen', '~> 3.0.5'
   gem 'rack-mini-profiler', github: 'MiniProfiler/rack-mini-profiler'
