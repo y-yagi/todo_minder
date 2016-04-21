@@ -9,12 +9,12 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_auth_hash(auth_hash)
     @user.update_if_needed!(auth_hash)
     session[:user_id] = @user.id
-    redirect_to tasks_path
+    redirect_to root_path
   end
 
   def destroy
     session.destroy
-    redirect_to root_path
+    redirect_to login_path
   end
 
   protected

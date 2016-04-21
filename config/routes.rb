@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
   resources :lists, except: :show
-  root 'index#index'
+  root 'tasks#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/auth/:provider/callback', to: 'sessions#create'
