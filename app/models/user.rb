@@ -27,16 +27,6 @@ class User < ApplicationRecord
         auth['info']['name']
       end
     end
-
-    def authenticate!(user_id: nil, provider: nil)
-      return nil if user_id.blank? || provider.blank?
-
-      if provider == 'google_oauth2'
-        User.find_by(email: user_id, provider: provider)
-      else
-        User.find_by(uid: user_id, provider: provider)
-      end
-    end
   end
 
   def update_if_needed!(auth)
