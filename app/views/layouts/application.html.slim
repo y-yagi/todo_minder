@@ -33,5 +33,9 @@ html
                   li
                     = link_to 'logout', logout_path
 
-    .container-fluid
-      = yield
+    - if fluid?
+      .container-fluid
+        = yield
+    - else
+      .container
+        = yield

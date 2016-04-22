@@ -40,6 +40,10 @@ class TasksController < ApplicationController
     redirect_to tasks_url, notice: 'Task was successfully destroyed.'
   end
 
+  def fluid?
+    true
+  end
+
   private
     def set_task
       @task = current_user.tasks.find(params[:id])
