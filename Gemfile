@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'babel-transpiler'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'omniauth'
@@ -9,8 +10,9 @@ gem 'puma', '~> 3.0'
 gem 'slim-rails'
 gem 'rails', '5.0.0.rc1'
 gem 'ruby-pushbullet', require: 'pushbullet'
-gem 'sass-rails', '~> 5.0'
-gem 'sprockets-es6'
+gem 'sass-rails', '~> 6.x'
+gem 'sprockets', '~> 4.x'
+gem 'sprockets-rails', '~> 3.x'
 gem 'turbolinks', '~> 5.x'
 gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
