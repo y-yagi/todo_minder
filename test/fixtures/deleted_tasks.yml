@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  detail: MyString
+  list: one
+  user: one
+  deadline_at: 2016-05-16 08:21:27
+  point: 1
+
+two:
+  detail: MyString
+  list: two
+  user: two
+  deadline_at: 2016-05-16 08:21:27
+  point: 1
