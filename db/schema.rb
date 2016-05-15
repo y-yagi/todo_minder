@@ -16,6 +16,18 @@ ActiveRecord::Schema.define(version: 20160516233830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "deleted_tasks", force: :cascade do |t|
+    t.string   "detail"
+    t.integer  "list_id"
+    t.integer  "user_id"
+    t.datetime "deadline_at"
+    t.integer  "point"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["list_id"], name: "index_deleted_tasks_on_list_id", using: :btree
+    t.index ["user_id"], name: "index_deleted_tasks_on_user_id", using: :btree
+  end
+
   create_table "lists", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "user_id"
