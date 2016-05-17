@@ -17,8 +17,13 @@
               .list-group-item
                 p.list-group-item-text
                   - if task.point
-                    strong.text-success
+                    strong.text-warning
                       = "#{task.point}pt"
+                  - if task.tags.present?
+                    - task.tags.each do |tag|
+                      span.label.label-success.label-list
+                        small
+                          = tag
                   span.pull-right
                     = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
