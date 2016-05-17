@@ -5,7 +5,8 @@
     "bootcards": "*" ,
     "remodal": "*",
     "eonasdan-bootstrap-datetimepicker": "*",
-    "moment": "*"
+    "moment": "*",
+    "bootstrap-tagsinput": "*"
   },
   "license": "MIT",
   "engines": {
