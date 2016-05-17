@@ -15,6 +15,7 @@
  *= require remodal/dist/remodal
  *= require remodal/dist/remodal-default-theme
  *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker
+ *= require bootstrap-tagsinput/dist/bootstrap-tagsinput
  *= require_tree .
  *= require_self
  */
