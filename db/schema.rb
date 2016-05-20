@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160516233830) do
     t.integer  "user_id"
     t.datetime "deadline_at"
     t.integer  "point"
+    t.string   "tags",                     array: true
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["list_id"], name: "index_deleted_tasks_on_list_id", using: :btree

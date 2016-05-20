@@ -6,6 +6,7 @@ class CreateDeletedTasks < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.datetime :deadline_at
       t.integer :point
+      t.string :tags, array: true
 
       t.timestamps
     end
