@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :tasks do
+    resource :finish, only: :update
+  end
   resources :tasks
   resources :lists, except: :show
   root 'tasks#index'
