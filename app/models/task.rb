@@ -7,6 +7,7 @@ class Task < ApplicationRecord
   scope :deadline_is_close, -> (user, range_end = 1.hour.since) do
     where(deadline_at: [Time.current..range_end])
   end
+  scope :active, -> { where(finished: false) }
 
   class << self
     def build(params, current_user)

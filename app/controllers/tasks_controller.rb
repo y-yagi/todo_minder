@@ -50,7 +50,7 @@ class TasksController < ApplicationController
     end
 
     def set_lists
-      @lists = current_user.lists.includes(:tasks)
+      @lists = current_user.lists.includes(:tasks).joins(:tasks).merge(Task.active)
     end
 
     def task_params
