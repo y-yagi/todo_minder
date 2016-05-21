@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :tasks do
-    resource :finish, only: :update
+    resource :finish, only: [:update, :show]
   end
   resources :tasks
   resources :lists, except: :show
