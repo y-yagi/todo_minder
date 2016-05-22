@@ -1,6 +1,6 @@
 .remodal-bg
   h2
-    | やることリスト
+    | おわったことリスト
   .row
     - @lists.each do |list|
       .col-sm-3.bootcards-list
@@ -9,9 +9,6 @@
             h3.panel-title.pull-left
               strong
                 = list.name
-            a data-remodal-target="add-modal" class='btn btn-primary btn-xs pull-right add-task' id="#{list.id}"
-              i.fa.fa-plus
-              | 追加
           .list-group
             - list.tasks.each do |task|
               .list-group-item
@@ -27,16 +24,8 @@
                   span.pull-right
                     = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
-                  = link_to tasks_finish_path(id: task.id), { title: 'タスク完了', class: 'text-success', method: :patch } do
-                    i.fa.fa-check-circle.finished-icon
-                  = link_to task.detail, edit_task_path(task), { remote: true }
-                  = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
-                    i.fa.fa-trash-o
+                  = link_to tasks_finish_path(id: task.id), { title: '未完了に戻す', class: 'text-success', method: :patch } do
+                    i.fa.fa-circle-o.finished-icon
+                  = task.detail
           .panel-footer.text-center
 
-.remodal data-remodal-id="add-modal"
-  button data-remodal-action="close" class="remodal-close"
-  .col-lg-12
-    .well.bs-component
-      == render 'form'
-.edit-modal
