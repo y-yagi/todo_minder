@@ -25,7 +25,7 @@
                     = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
                   = link_to tasks_finish_path(id: task.id), { title: '未完了に戻す', class: 'text-success', method: :patch } do
-                    i.fa.fa-circle-o.finished-icon
+                    i.fa.fa-check-circle.finished-icon
                   = task.detail
           .panel-footer.text-center
 
