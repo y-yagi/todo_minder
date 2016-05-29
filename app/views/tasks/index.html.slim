@@ -12,12 +12,11 @@
           - @tasks.each do |task|
             .list-group-item
               p.list-group-item-text
+                span.label.label-info.label-list
+                  = task.list.name
                 - if task.point
                   strong.text-warning
                     = "#{task.point}pt"
-                span.label.label-info.label-list
-                  small
-                    = task.list.name
                 - if task.tags.present?
                   - task.tags.each do |tag|
                     span.label.label-success.label-list
