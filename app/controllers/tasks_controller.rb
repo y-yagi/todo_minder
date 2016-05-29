@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_doing_tasks, only: [:index, :create, :edit, :update, :destroy]
   before_action :set_lists, only: [:index, :create, :edit, :update, :destroy]
 
   def index
@@ -51,6 +52,10 @@ class TasksController < ApplicationController
 
     def set_lists
       @lists = current_user.lists.includes(:tasks)
+    end
+
+    def set_doing_tasks
+      @tasks = current_user.tasks.merge(Task.doing).includes(:list)
     end
 
     def task_params

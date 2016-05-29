@@ -1,7 +1,40 @@
 .remodal-bg
   h2
-    | やることリスト
+    | タスクリスト
   .row
+    .col-sm-2.bootcards-list
+      .panel.panel-default
+        .panel-heading.clearfix
+          h3.panel-title.pull-left
+            strong.text-danger
+              | 作業中
+        .list-group
+          - @tasks.each do |task|
+            .list-group-item
+              p.list-group-item-text
+                - if task.point
+                  strong.text-warning
+                    = "#{task.point}pt"
+                span.label.label-info.label-list
+                  small
+                    = task.list.name
+                - if task.tags.present?
+                  - task.tags.each do |tag|
+                    span.label.label-success.label-list
+                      small
+                        = tag
+                span.pull-right
+                  = l(task.deadline_at) if task.deadline_at
+              h4.list-group-item-heading
+                = link_to task.detail, edit_task_path(task), { remote: true }
+                br
+                = link_to tasks_finish_path(id: task.id), { title: 'タスク完了', class: 'text-success', method: :patch } do
+                  i.fa.fa-check.task-icon
+                = link_to tasks_wait_path(id: task.id), { title: 'タスクリストに戻す', class: 'text-primary', method: :patch } do
+                  i.fa.fa-backward.task-icon
+                = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
+                  i.fa.fa-trash-o.task.task-icon
+        .panel-footer.text-center
     - @lists.each do |list|
       .col-sm-2.bootcards-list
         .panel.panel-default
@@ -13,7 +46,7 @@
               i.fa.fa-plus
               | 追加
           .list-group
-            - list.tasks.reject(&:finished?).each do |task|
+            - list.tasks.select(&:wait?).each do |task|
               .list-group-item
                 p.list-group-item-text
                   - if task.point
@@ -28,9 +61,10 @@
                     = l(task.deadline_at) if task.deadline_at
                 h4.list-group-item-heading
                   = link_to task.detail, edit_task_path(task), { remote: true }
+                  br
                   = link_to tasks_finish_path(id: task.id), { title: 'タスク完了', class: 'text-success', method: :patch } do
                     i.fa.fa-check.task-icon
-                  = link_to tasks_toggle_today_path(id: task.id), { title: '今日やる', class: 'text-primary', method: :patch } do
+                  = link_to tasks_start_path(id: task.id), { title: 'タスク開始', class: 'text-primary', method: :patch } do
                     i.fa.fa-play-circle.task-icon
                   = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
                     i.fa.fa-trash-o.task.task-icon
