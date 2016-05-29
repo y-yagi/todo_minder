@@ -55,7 +55,7 @@ class TasksController < ApplicationController
     end
 
     def set_doing_tasks
-      @tasks = current_user.tasks.merge(Task.doing).includes(:list)
+      @tasks = current_user.tasks.merge(Task.doing).includes(:list).order(deadline_at: :ASC)
     end
 
     def task_params
