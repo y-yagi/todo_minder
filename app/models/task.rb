@@ -10,6 +10,8 @@ class Task < ApplicationRecord
   scope :active, -> { where(finished: false) }
   scope :finished, -> { where(finished: true) }
 
+  enum status: [:wait, :doing, :finished]
+
   class << self
     def build(params, current_user)
       task = Task.new(params)
