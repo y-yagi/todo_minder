@@ -5,4 +5,5 @@ document.addEventListener("turbolinks:load", function() {
     $('#task_list_id').val(list_id);
   });
   $('#datetimepicker').datetimepicker({format: 'YYYY/MM/DD HH:mm'});
+  $('#task_tags').tagsinput();
 });

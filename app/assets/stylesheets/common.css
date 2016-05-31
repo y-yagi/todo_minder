@@ -3,7 +3,7 @@
   margin-left: 5px;
 }
 
-.list-group-item i.finished-icon {
+.list-group-item i.task-icon {
   opacity: .9;
-  margin-right: 0px;
+  margin-right: 10px;
 }
