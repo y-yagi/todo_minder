@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :tasks
   resources :lists, except: :show
+  resource :user, only: [:edit, :update], as: :my
   root 'tasks#index'
 
   get '/auth/:provider/callback', to: 'sessions#create'
