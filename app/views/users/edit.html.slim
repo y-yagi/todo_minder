@@ -1,0 +1,24 @@
+.col-lg-12
+  .well.bs-component
+    = form_for @user, url: my_url, html: { class: 'form-horizontal'} do |f|
+      - if @user.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+          ul
+            - @user.errors.full_messages.each do |message|
+              li = message
+
+      fieldset
+        legend
+          | Setting
+        .form-group
+          = f.label :notification, class: 'col-lg-2 control-label'
+          .col-lg-10
+            = f.check_box :notification, class: 'form-control'
+        .form-group
+          = f.label :pushbullet_api_token, class: 'col-lg-2 control-label'
+          .col-lg-10
+            = f.text_field :pushbullet_api_token, class: 'form-control', value: @user.maskd_pushbullet_api_token
+        .col-lg-10.col-lg-offset-2
+          .form-group
+            = f.submit class: 'btn btn-primary'
