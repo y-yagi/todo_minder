@@ -61,8 +61,6 @@
                 h4.list-group-item-heading
                   = link_to task.detail, edit_task_path(task), { remote: true }
                   br
-                  = link_to tasks_finish_path(id: task.id), { title: 'タスク完了', class: 'text-success', method: :patch } do
-                    i.fa.fa-check.task-icon
                   = link_to tasks_start_path(id: task.id), { title: 'タスク開始', class: 'text-primary', method: :patch } do
                     i.fa.fa-play-circle.task-icon
                   = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
