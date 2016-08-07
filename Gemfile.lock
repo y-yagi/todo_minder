@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/MiniProfiler/rack-mini-profiler.git
-  revision: cf63b984507ebb247fb44793c12c25f34047ca13
+  revision: faece4848dc04bd9aaa028becb4d561d0063666c
   specs:
     rack-mini-profiler (0.10.1)
       rack (>= 1.2.0)
@@ -55,7 +55,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    arel (7.1.0)
+    arel (7.1.1)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -78,7 +78,7 @@ GEM
     fast_stack (0.2.0)
     ffi (1.9.14)
     flamegraph (0.9.5)
-    globalid (0.3.6)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.4)
     http-cookie (1.0.2)
@@ -145,7 +145,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    puma (3.5.2)
+    puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -217,7 +217,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
