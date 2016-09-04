@@ -20,5 +20,4 @@
 //= require moment/locale/ja
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min
 //= require bootstrap-tagsinput.min
-//= stub service-worker
 //= require_tree .
