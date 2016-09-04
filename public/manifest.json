@@ -2,8 +2,8 @@
   "name": "Todo Minder",
   "short_name": "Todo",
   "icons": [{
-        "src": "icon_128.png",
-        "sizes": "128x128",
+        "src": "/icon_128.png",
+        "sizes": "144x144",
         "type": "image/png"
       }],
   "start_url": "https://todo-minder.herokuapp.com",
