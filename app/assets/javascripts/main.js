@@ -35,7 +35,7 @@
 
   if ('serviceWorker' in navigator &&
       (window.location.protocol === 'https:' || isLocalhost)) {
-    navigator.serviceWorker.register('<%= asset_path('service-worker') %>')
+    navigator.serviceWorker.register('/assets/service-worker.js')
     .then(function(registration) {
       // updatefound is fired if service-worker.js changes.
       registration.onupdatefound = function() {
