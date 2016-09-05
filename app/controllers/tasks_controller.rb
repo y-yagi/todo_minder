@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   before_action :set_lists, only: [:index, :create, :edit, :update, :destroy]
 
   def index
+    @fluid = true
     @task = Task.new
   end
 
@@ -39,10 +40,6 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to tasks_url, notice: 'Task was successfully destroyed.'
-  end
-
-  def fluid?
-    true
   end
 
   private

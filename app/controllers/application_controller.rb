@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def fluid?
-    false
+    defined?(@fluid) && @fluid
   end
 end
