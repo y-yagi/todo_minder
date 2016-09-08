@@ -1,33 +1,36 @@
-= form_for @task, html: { class: 'form-horizontal' } do |f|
-  - if @task.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
-      ul
-        - @task.errors.full_messages.each do |message|
-          li = message
+.col-lg-12
+  .well.bs-component
+    = form_for @task, html: { class: 'form-horizontal' } do |f|
+      - if @task.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+          ul
+            - @task.errors.full_messages.each do |message|
+              li = message
 
-  fieldset
-    .form-group
-      = f.label :detail, class: 'col-lg-2 control-label'
-      .col-lg-10
-        = f.text_field :detail, class: 'form-control'
-    .form-group
-      = f.label :list_id, class: 'col-lg-2 control-label'
-      .col-lg-10
-        = f.select :list_id, options_for_select(@lists.map { |list| [list.name, list.id] }, selected: @task.list.try(:id)), {}, { class: 'form-control' }
-    .form-group
-      = f.label :deadline_at, class: 'col-lg-2 control-label'
-      .col-lg-10
-        .input-group.date id='datetimepicker'
-          = f.text_field :deadline_at, class: 'form-control'
-          span.input-group-addon
-            span.glyphicon.glyphicon-calendar
-    .form-group
-      = f.label :point, class: 'col-lg-2 control-label'
-      .col-lg-10
-        = f.select :point, options_for_select((1..9).to_a, selected: @task.point), { include_blank: true }, { class: 'form-control' }
-    .form-group
-      = f.label :tags, class: 'col-lg-2 control-label'
-      = f.text_field :tags, class: 'form-control', data: { role: "tagsinput" }, value: @task.tags.try(:join, ',')
-    .form-group
-      = f.submit class: 'btn btn-primary'
+      fieldset
+        .form-group
+          = f.label :detail, class: 'col-lg-2 control-label'
+          .col-lg-10
+            = f.text_field :detail, class: 'form-control'
+        .form-group
+          = f.label :list_id, class: 'col-lg-2 control-label'
+          .col-lg-10
+            = f.select :list_id, options_for_select(@lists.map { |list| [list.name, list.id] }, selected: @task.list.try(:id)), {}, { class: 'form-control' }
+        .form-group
+          = f.label :deadline_at, class: 'col-lg-2 control-label'
+          .col-lg-10
+            .input-group.date id='datetimepicker'
+              = f.text_field :deadline_at, class: 'form-control'
+              span.input-group-addon
+                span.glyphicon.glyphicon-calendar
+        .form-group
+          = f.label :point, class: 'col-lg-2 control-label'
+          .col-lg-10
+            = f.select :point, options_for_select((1..9).to_a, selected: @task.point), { include_blank: true }, { class: 'form-control' }
+        .form-group
+          = f.label :tags, class: 'col-lg-2 control-label'
+          = f.text_field :tags, class: 'form-control', data: { role: "tagsinput" }, value: @task.tags.try(:join, ',')
+        .col-lg-10.col-lg-offset-2
+          .form-group
+            = f.submit class: 'btn btn-primary'
