@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/y-yagi/slim-rails.git
-  revision: 67a93b6e4954126f510c7b5f8bbea8d3f29a8d65
+  revision: 2b69604d381bc921623149953efaca81fe84992d
   branch: make_work_with_sprockets_4
   specs:
     slim-rails (3.1.1)
