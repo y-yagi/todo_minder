@@ -1,21 +1,22 @@
 source 'https://rubygems.org'
 
+ruby "2.4.0"
+
 gem 'babel-transpiler'
 gem 'jquery-rails'
+gem 'json', '>= 2.0.0'
 gem 'pg', '~> 0.18'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-twitter'
 gem 'puma', '~> 3.0'
 gem 'slim-rails', github: 'y-yagi/slim-rails', branch: 'make_work_with_sprockets_4'
-gem 'rails', '>= 5.0.0.1'
+gem 'rails', '>= 5.0.1'
 gem 'ruby-pushbullet', require: 'pushbullet'
 gem 'sass-rails', github: 'rails/sass-rails'
 gem 'sprockets', '~> 4.x'
 gem 'sprockets-rails', '~> 3.x'
 gem 'turbolinks', '~> 5.x'
 gem 'uglifier', '>= 1.3.0'
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'byebug', platform: :mri
