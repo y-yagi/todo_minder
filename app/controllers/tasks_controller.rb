@@ -52,6 +52,6 @@ class TasksController < ApplicationController
 
     def task_params
       params[:task][:tags] = params[:task][:tags].split(',') if params[:task][:tags]
-      params.require(:task).permit(:detail, :list_id, :deadline_at, :point, tags: [])
+      params.require(:task).permit(:detail, :deadline_at, :point, tags: [])
     end
 end
