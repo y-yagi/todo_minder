@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resource :wait, only: [:update]
   end
   resources :tasks
-  resources :lists, except: :show
   resource :user, only: [:edit, :update], as: :my
   root 'tasks#index'
 
