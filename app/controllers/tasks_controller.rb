@@ -47,7 +47,7 @@ class TasksController < ApplicationController
     end
 
     def set_tasks
-      @tasks = current_user.tasks.order(deadline_at: :ASC)
+      @tasks = current_user.tasks.order(deadline_at: :ASC).order(id: :DESC)
     end
 
     def task_params
