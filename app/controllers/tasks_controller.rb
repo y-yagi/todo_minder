@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :set_doing_tasks, only: [:index, :create, :edit, :update, :destroy]
-  before_action :set_lists, only: [:index, :create, :edit, :update, :destroy]
+  before_action :set_tasks, only: [:index, :create, :edit, :update, :destroy]
 
   def index
     @fluid = true
@@ -47,16 +46,12 @@ class TasksController < ApplicationController
       @task = current_user.tasks.find(params[:id])
     end
 
-    def set_lists
-      @lists = current_user.lists.includes(:tasks)
-    end
-
-    def set_doing_tasks
-      @tasks = current_user.tasks.merge(Task.doing).includes(:list).order(deadline_at: :ASC)
+    def set_tasks
+      @tasks = current_user.tasks.order(deadline_at: :ASC).order(id: :DESC)
     end
 
     def task_params
       params[:task][:tags] = params[:task][:tags].split(',') if params[:task][:tags]
-      params.require(:task).permit(:detail, :list_id, :deadline_at, :point, tags: [])
+      params.require(:task).permit(:detail, :deadline_at, :point, tags: [])
     end
 end

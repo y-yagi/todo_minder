@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   namespace :tasks do
-    resource :finish, only: [:update, :show]
-    resource :start, only: [:update]
     resource :wait, only: [:update]
   end
   resources :tasks
-  resources :lists, except: :show
   resource :user, only: [:edit, :update], as: :my
   root 'tasks#index'
 
