@@ -25,7 +25,7 @@
                 - task.tags.each do |tag|
                   span.label.label-success.label-list
                     small
-                      = tag
+                      = link_to tag, tasks_url(tag: tag), { class: 'tag_link' }
           .panel-footer.text-center
               = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
                 i.fa.fa-trash-o.task.task-icon

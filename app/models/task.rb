@@ -15,5 +15,13 @@ class Task < ApplicationRecord
       task.user = current_user
       task
     end
+
+    def with_tag(tag)
+      if tag
+        where("tags @> ARRAY[?]::varchar[]", tag)
+      else
+        all
+      end
+    end
   end
 end
