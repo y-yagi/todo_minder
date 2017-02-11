@@ -1,37 +1,31 @@
-.remodal-bg
-  h2
-    | タスクリスト
-    = link_to new_task_path, { class: "btn btn-primary btn-xs add-task" }
-      i.fa.fa-plus
-      | 追加
-  .row
-    - @tasks.each do |task|
-      .col-sm-2.bootcards-list
-        .panel.panel-default
-          .panel-heading.clearfix
-            .panel-title.pull-left
-              = l(task.deadline_at) if task.deadline_at
-            .panel-title.pull-right
-              - if task.point
-                strong.text-warning
-                  = "#{task.point}pt"
-          .list-group
-            .list-group-item
-              p.list-group-item-text
-              h4.list-group-item-heading
-                = link_to task.detail, edit_task_path(task), { remote: true }
-                br
-              - if task.tags.present?
-                - task.tags.each do |tag|
-                  span.label.label-success.label-list
-                    small
-                      = link_to tag, tasks_url(tag: tag), { class: 'tag_link' }
-          .panel-footer.text-center
-              = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
-                i.fa.fa-trash-o.task.task-icon
-                  | 削除
-
-.remodal data-remodal-id="add-modal"
-  button data-remodal-action="close" class="remodal-close"
-  == render 'form'
-.edit-modal
+h2
+  | タスクリスト
+  = link_to new_task_path, { class: "btn btn-primary btn-xs add-task" }
+    i.fa.fa-plus
+    | 追加
+.row
+  - @tasks.each do |task|
+    .col-sm-2.bootcards-list
+      .panel.panel-default
+        .panel-heading.clearfix
+          .panel-title.pull-left
+            = l(task.deadline_at) if task.deadline_at
+          .panel-title.pull-right
+            - if task.point
+              strong.text-warning
+                = "#{task.point}pt"
+        .list-group
+          .list-group-item
+            p.list-group-item-text
+            h4.list-group-item-heading
+              = link_to task.detail, edit_task_path(task), { remote: true }
+              br
+            - if task.tags.present?
+              - task.tags.each do |tag|
+                span.label.label-success.label-list
+                  small
+                    = link_to tag, tasks_url(tag: tag), { class: 'tag_link' }
+        .panel-footer.text-center
+            = link_to task, { data: { confirm: 'Are you sure?' }, class: 'text-danger', method: :delete, title: 'タスク削除' } do
+              i.fa.fa-trash-o.task.task-icon
+                | 削除
