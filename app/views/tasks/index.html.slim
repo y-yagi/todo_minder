@@ -1,7 +1,7 @@
 .remodal-bg
   h2
     | タスクリスト
-    a data-remodal-target="add-modal" class='btn btn-primary btn-xs add-task'
+    = link_to new_task_path, { class: "btn btn-primary btn-xs add-task" }
       i.fa.fa-plus
       | 追加
   .row
