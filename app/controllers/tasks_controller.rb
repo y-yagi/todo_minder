@@ -11,7 +11,6 @@ class TasksController < ApplicationController
   end
 
   def new
-    @list = current_user.lists.find(params[:list_id])
     @task = Task.new
   end
 

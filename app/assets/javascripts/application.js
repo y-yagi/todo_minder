@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap/dist/js/bootstrap.min
 //= require bootcards/dist/js/bootcards.min
-//= require remodal/dist/remodal.min
 //= require moment/min/moment.min
 //= require moment/locale/ja
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min

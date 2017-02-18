@@ -12,8 +12,6 @@
  *
  *= require bootcards/dist/css/bootcards-desktop.min
  *= require bootstrap.min
- *= require remodal/dist/remodal
- *= require remodal/dist/remodal-default-theme
  *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker
  *= require bootstrap-tagsinput
  *= require_tree .

@@ -3,7 +3,6 @@
   "dependencies": {
     "bootstrap": "*" ,
     "bootcards": "*" ,
-    "remodal": "*",
     "eonasdan-bootstrap-datetimepicker": "*",
     "moment": "*"
   },
