@@ -18,7 +18,7 @@ h2
           .list-group-item
             p.list-group-item-text
             h4.list-group-item-heading
-              = link_to task.detail, edit_task_path(task), { remote: true }
+              = link_to task.detail, edit_task_path(task)
               br
             - if task.tags.present?
               - task.tags.each do |tag|
