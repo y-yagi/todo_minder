@@ -16,10 +16,7 @@
         .form-group
           = f.label :deadline_at, class: 'col-lg-2 control-label'
           .col-lg-10
-            .input-group.date id='datetimepicker'
-              = f.text_field :deadline_at, class: 'form-control'
-              span.input-group-addon
-                span.glyphicon.glyphicon-calendar
+            = f.datetime_field :deadline_at, class: 'from-control'
         .form-group
           = f.label :point, class: 'col-lg-2 control-label'
           .col-lg-10
