@@ -74,7 +74,7 @@ GEM
     flamegraph (0.9.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    hashie (3.5.6)
+    hashie (3.5.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.1)
